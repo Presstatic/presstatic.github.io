@@ -507,7 +507,16 @@ a:focus-visible{outline:3px solid #06b6f0;outline-offset:3px;border-radius:10px}
 .gh{display:inline-block;flex:none;width:18px;height:18px;vertical-align:-3px;margin-right:8px;background-color:currentColor;-webkit-mask:url(github-mark.svg) center/contain no-repeat;mask:url(github-mark.svg) center/contain no-repeat}
 .menu .gh{width:16px;height:16px;margin-right:6px}
 .foot-links a{display:inline-flex;align-items:center}
-.cta .cta-logo{box-sizing:content-box;padding:10px 16px;border-radius:14px;background:rgba(7,13,36,.62)} /* base scura: il blu di «tatic» si legge anche sul fondo blu */
+.cta .cta-logo{filter:drop-shadow(0 0 3px rgba(4,12,48,.7)) drop-shadow(0 3px 14px rgba(4,12,48,.6))} /* senza riquadro: un'ombra morbida stacca «tatic» dal fondo blu */
+
+/* «Sei pronto.»: il traguardo della linea del tempo, allineato alle schede dei passaggi */
+@media (min-width:641px){
+  .ins-done{position:relative;margin-left:70px}
+  .ins-done .ico{display:none} /* la spunta c'è già nel bollino sulla linea */
+  .ins-done::before{content:"";position:absolute;left:-47px;top:-64px;height:94px;width:2px;border-radius:2px;background:linear-gradient(#7c5cff,#0cce6b);opacity:.45}
+  .ins-done::after{content:"";position:absolute;left:-70px;top:30px;width:48px;height:48px;border-radius:15px;box-shadow:0 12px 24px -12px rgba(12,206,107,.7);
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/22px no-repeat,linear-gradient(135deg,#0aa55a,#0cce6b)}
+}
 </style>
 </head>
 <body>
